@@ -1,0 +1,108 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Create new offer"""
+input CreateOfferDto {
+  city: String!
+  createdDate: DateTime!
+  enrolled: Float!
+  jornada: String!
+  rangoSalarial: String!
+  remoto: String!
+  tipoContrato: String!
+  title: String!
+  userId: String!
+}
+
+"""Create for UsersOffersModel """
+input CreateUsersOffersInput {
+  offer_id: String!
+  user_id: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createItem(input: CreateUsersOffersInput!): UsersOffer!
+  createOffer(createOfferDto: CreateOfferDto!): Offer!
+  updateEnrollOffer(id: String!, input: UpdateOfferEnrollInput!): Offer!
+  updateOffer(id: String!, offerInputs: UpdateOfferInput!): Offer!
+  updateUserSkills(id: String!, input: UpdateUserSkillInput!): User!
+}
+
+"""from CompanyOfferModel """
+type Offer {
+  _id: ID!
+  city: String!
+  createdDate: DateTime!
+  description: String!
+  eduLevel: String!
+  enrolled: Float!
+  jornada: String!
+  rangoSalarial: String!
+  remoto: String!
+  tipoContrato: String!
+  title: String!
+  userId: String!
+  userName: User!
+}
+
+type Query {
+  getCompanyOffers: [Offer!]!
+  getOffer(id: String!): Offer!
+  getSkill(id: String!): Softskill!
+  getSoftskills: [Softskill!]!
+  getUser(id: String!): User!
+  getUsers: [User!]!
+  getUsersOffers: [UsersOffer!]!
+}
+
+"""from SoftskillsModel """
+type Softskill {
+  _id: ID!
+  name: String!
+}
+
+"""Update enrolled document"""
+input UpdateOfferEnrollInput {
+  enrolled: Int!
+}
+
+"""Update Offer document"""
+input UpdateOfferInput {
+  city: String!
+  jornada: String!
+  rangoSalarial: String!
+  remoto: String!
+  tipoContrato: String!
+  title: String!
+}
+
+"""Update Offer document"""
+input UpdateUserSkillInput {
+  valors: [String!]!
+}
+
+"""from UserModel """
+type User {
+  _id: ID!
+  city: String!
+  eduLevel: String!
+  email: String!
+  name: String!
+  password: String!
+  surname: String!
+  tipo: String!
+  valors: [String!]!
+}
+
+"""from UsersOfferModel """
+type UsersOffer {
+  _id: ID!
+  offer_id: String!
+  user_id: String!
+}
