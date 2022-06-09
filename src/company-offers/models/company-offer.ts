@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Type } from 'class-transformer';
 import mongoose from 'mongoose';
 import { Document, Types as MongooseTypes } from 'mongoose';
 import { User } from 'src/users/models/user';
@@ -59,7 +58,7 @@ export class Offer {
   // TODO: Get info from owner
   @Field(() => User)
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: User.name })
-  @Type(() => User)
+  //@Type(() => User)
   userName: User;
 
 }
