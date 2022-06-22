@@ -17,7 +17,11 @@ export class CreateOfferDto {
     @Field(() => String)
     @Prop()
     title: string;
-  
+
+    @Field(() => String)
+    @Prop()
+    eduLevel: string;
+
     @Field(() => String)
     @Prop()
     city: string;
@@ -41,7 +45,15 @@ export class CreateOfferDto {
     @Field(() => Number)
     @Prop()
     enrolled: number;
-  
+
+    @Field(() => String)
+    @Prop()
+    description: string;
+    
+    @Field(() => String)
+    @Prop()
+    requirements: string;
+
     @Field(() => Date)
     @Prop()
     createdDate: Date;

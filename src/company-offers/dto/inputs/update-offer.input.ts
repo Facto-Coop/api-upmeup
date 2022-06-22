@@ -13,6 +13,10 @@ export class UpdateOfferInput {
     title: string;
   
     @Field(() => String)
+    @Prop()
+    eduLevel: string;
+
+    @Field(() => String)
     @Prop({ required: true })
     city: string;
   
@@ -31,5 +35,12 @@ export class UpdateOfferInput {
     @Field(() => String)
     @Prop({ required: true })
     jornada: string;
-  
+
+    @Field(() => String)
+    @Prop()
+    description: string;
+
+    @Field(() => String)
+    @Prop()
+    requirements: string;
 }

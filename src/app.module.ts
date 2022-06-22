@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { CompanyOffersModule } from './company-offers/company-offers.module';
 import { UsersOffersModule } from './users-offers/users-offers.module';
 import { SoftskillsModule } from './softskills/softskills.module';
+import { SectorsModule } from './sectors/sectors.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { SoftskillsModule } from './softskills/softskills.module';
     CompanyOffersModule,
     UsersOffersModule,
     SoftskillsModule,
+    SectorsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

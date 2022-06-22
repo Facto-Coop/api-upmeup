@@ -51,15 +51,19 @@ export class Offer {
   @Prop()
   description: string;
 
+  @Field(() => String)
+  @Prop()
+  requirements: string;
+
   @Field(() => Date)
   @Prop()
   createdDate: Date;
   
   // TODO: Get info from owner
-  @Field(() => User)
+  /*@Field(() => User)
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: User.name })
   //@Type(() => User)
-  userName: User;
+  userName: User;*/
 
 }
 

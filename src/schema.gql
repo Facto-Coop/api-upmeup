@@ -6,10 +6,13 @@
 input CreateOfferDto {
   city: String!
   createdDate: DateTime!
+  description: String!
+  eduLevel: String!
   enrolled: Float!
   jornada: String!
   rangoSalarial: String!
   remoto: String!
+  requirements: String!
   tipoContrato: String!
   title: String!
   userId: String!
@@ -45,20 +48,28 @@ type Offer {
   jornada: String!
   rangoSalarial: String!
   remoto: String!
+  requirements: String!
   tipoContrato: String!
   title: String!
   userId: String!
-  userName: User!
 }
 
 type Query {
   getCompanyOffers: [Offer!]!
   getOffer(id: String!): Offer!
+  getSector(id: String!): Sector!
+  getSectors: [Sector!]!
   getSkill(id: String!): Softskill!
   getSoftskills: [Softskill!]!
   getUser(id: String!): User!
   getUsers: [User!]!
   getUsersOffers: [UsersOffer!]!
+}
+
+"""from SectorsModel """
+type Sector {
+  _id: ID!
+  name: String!
 }
 
 """from SoftskillsModel """
@@ -75,9 +86,12 @@ input UpdateOfferEnrollInput {
 """Update Offer document"""
 input UpdateOfferInput {
   city: String!
+  description: String!
+  eduLevel: String!
   jornada: String!
   rangoSalarial: String!
   remoto: String!
+  requirements: String!
   tipoContrato: String!
   title: String!
 }
@@ -95,6 +109,7 @@ type User {
   email: String!
   name: String!
   password: String!
+  sector_id: String!
   surname: String!
   tipo: String!
   valors: [String!]!

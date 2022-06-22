@@ -20,6 +20,10 @@ export class User {
   @Field(() => String)
   @Prop()
   city: string;
+
+  @Field(() => String)
+  @Prop()
+  sector_id: string;
   
   @Field(() => String)
   @Prop()

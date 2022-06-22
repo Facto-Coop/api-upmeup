@@ -17,7 +17,7 @@ export class CompanyOffersService {
   async findAll() {
     try {
       //return await this.coffModel.find().populate('userName');
-      return await this.coffModel.find().sort({ createdDate: -1 }).populate('userName');
+      return await this.coffModel.find().sort({ createdDate: -1 }); //.populate('userName');
     } catch (error) {
       throw new BadRequestException();
     }
@@ -27,7 +27,7 @@ export class CompanyOffersService {
    * Offer by ID
    *  */
   async getOffer(_id: string): Promise<Offer> {
-    return this.coffModel.findOne({ _id }).populate('userName');
+    return this.coffModel.findOne({ _id }); //.populate('userName');
   }
 
   /**
