@@ -13,11 +13,10 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
-  await app.listen(3000);
+  await app.listen(3000, '0.0.0.0');
 
   Logger.log('', 'Start');
-  Logger.log('API RUNNING: http://localhost', 'Start');
+  Logger.log(`API RUNNING: ${await app.getUrl()}`, 'Start');
   Logger.log('', 'Start');
-  console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();

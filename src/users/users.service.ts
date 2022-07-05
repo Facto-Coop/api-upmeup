@@ -1,6 +1,7 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { UpdateUserInput } from './dto/inputs/update-user.input';
 import { UpdateUserSkillInput } from './dto/inputs/update-userSkills.input';
 import { User, UserDocument } from './models/user';
 // import { CreateUserInput } from './dto/create-user.input';
@@ -25,6 +26,16 @@ export class UsersService {
    */
   async getUser(_id: string): Promise<User> {
     return await this.uModel.findOne({ _id });
+  }
+
+  /**
+   * Update User Info (except skills).
+   * @param _id
+   * @param updateUserInput
+   * @returns
+   */
+  updateUser(_id: string, updateUserInput: UpdateUserInput) {
+    return this.uModel.findByIdAndUpdate(_id, updateUserInput);
   }
 
   /**

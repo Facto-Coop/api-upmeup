@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
+import { UpdateUserInput } from './dto/inputs/update-user.input';
 import { UpdateUserSkillInput } from './dto/inputs/update-userSkills.input';
 import { User } from './models/user';
 import { UsersService } from './users.service';
@@ -17,6 +18,17 @@ export class UsersResolver {
   @Query((returns) => User)
   async getUser(@Args('id') id: string) {
     return await this.uService.getUser(id);
+  }
+
+  /**
+   * Mutation: Update User
+   */
+  @Mutation(() => User, { name: 'updateUser' })
+  async updateOffer(
+    @Args('id') _id: string,
+    @Args({ name: 'userInputs', type: () => UpdateUserInput }) input: UpdateUserInput
+  ) {
+    return await this.uService.updateUser(_id, input);
   }
 
   /**

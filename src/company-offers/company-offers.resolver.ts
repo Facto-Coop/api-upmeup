@@ -1,11 +1,9 @@
 /* eslint-disable prettier/prettier */
 import { Resolver, Query, Args, Mutation, Parent, ResolveField } from '@nestjs/graphql';
-import { Types as MongooseTypes } from 'mongoose';
-import { Offer, OfferDocument } from './models/company-offer';
+import { Offer } from './models/company-offer';
 import { CompanyOffersService } from './company-offers.service';
 import { CreateOfferDto } from './dto/create-offer.dto';
 import { UpdateOfferInput } from './dto/inputs/update-offer.input';
-import { User } from 'src/users/models/user';
 import { UpdateOfferEnrollInput } from './dto/inputs/update-offerEnroll.input';
 
 @Resolver(() => Offer)

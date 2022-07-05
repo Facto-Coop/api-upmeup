@@ -41,17 +41,32 @@ export class User {
   @Prop()
   email: string;
 
+  @Field(() => String)
+  @Prop()
+  jobPosition: string;
+  
+  @Field(() => String)
+  @Prop()
+  lastJobTasks: string;
+  
+  @Field(() => String)
+  @Prop()
+  experience: string;
+
+  @Field(() => [String])
+  @Prop()
+  languages: string[];
+
+/* Campo para conocimiento (tags?)
+  @Field(() => [String])
+  @Prop()
+  knowledge: string[];
+*/
+
   @Field(() => [String])
   @Prop()
   valors: string[];
 
-  // TODO: Solve problems with array values!
-  /*@Field({ nullable: true })
-  valors: Array<string>;
-  -- options:
-  @Field(type => [Post])
-  posts: Post[];
-  */
 }
 export type UserDocument = User & Document;
 export const UserSchema = SchemaFactory.createForClass(User);

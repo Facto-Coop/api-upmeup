@@ -20,6 +20,10 @@ export class CreateUserDto {
   @Field(() => String)
   @Prop()
   city: string;
+
+  @Field(() => String)
+  @Prop()
+  sector_id: string;
   
   @Field(() => String)
   @Prop()
@@ -36,6 +40,28 @@ export class CreateUserDto {
   @Field(() => String)
   @Prop()
   email: string;
+
+  @Field(() => String)
+  @Prop()
+  jobPosition: string;
+  
+  @Field(() => String)
+  @Prop()
+  lastJobTasks: string;
+
+  @Field(() => String)
+  @Prop()
+  experience: string;
+
+  @Field(() => [String])
+  @Prop()
+  languages: string[];
+
+/* 
+  @Field(() => [String])
+  @Prop()
+  knowledge: string[];
+*/
 
   @Field(() => [String])
   @Prop()

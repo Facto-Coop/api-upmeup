@@ -34,6 +34,7 @@ type Mutation {
   createOffer(createOfferDto: CreateOfferDto!): Offer!
   updateEnrollOffer(id: String!, input: UpdateOfferEnrollInput!): Offer!
   updateOffer(id: String!, offerInputs: UpdateOfferInput!): Offer!
+  updateUser(id: String!, userInputs: UpdateUserInput!): User!
   updateUserSkills(id: String!, input: UpdateUserSkillInput!): User!
 }
 
@@ -96,6 +97,20 @@ input UpdateOfferInput {
   title: String!
 }
 
+"""Update User document"""
+input UpdateUserInput {
+  city: String!
+  eduLevel: String!
+  email: String!
+  experience: String!
+  jobPosition: String!
+  languages: [String!]!
+  lastJobTasks: String!
+  name: String!
+  sector_id: String!
+  surname: String!
+}
+
 """Update Offer document"""
 input UpdateUserSkillInput {
   valors: [String!]!
@@ -107,6 +122,10 @@ type User {
   city: String!
   eduLevel: String!
   email: String!
+  experience: String!
+  jobPosition: String!
+  languages: [String!]!
+  lastJobTasks: String!
   name: String!
   password: String!
   sector_id: String!
