@@ -1,13 +1,14 @@
+/* eslint-disable prettier/prettier */
 /** Used for transfer data like create and update...*/
 /* eslint-disable prettier/prettier */
-import { Directive, Field, ID, ObjectType } from '@nestjs/graphql';
+import { Field, InputType } from '@nestjs/graphql';
 import { Prop, Schema } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
 
 export type UserDocument = CreateUserDto & mongoose.Document;
 
 @Schema()
-@ObjectType({ description: 'Create new user' })
+@InputType({ description: 'Create new User' })
 export class CreateUserDto {
   @Field(() => String)
   @Prop()
@@ -44,7 +45,7 @@ export class CreateUserDto {
   @Field(() => String)
   @Prop()
   jobPosition: string;
-  
+
   @Field(() => String)
   @Prop()
   lastJobTasks: string;

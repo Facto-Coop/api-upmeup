@@ -4,8 +4,7 @@ import { Model } from 'mongoose';
 import { UpdateUserInput } from './dto/inputs/update-user.input';
 import { UpdateUserSkillInput } from './dto/inputs/update-userSkills.input';
 import { User, UserDocument } from './models/user';
-// import { CreateUserInput } from './dto/create-user.input';
-// import { UpdateUserInput } from './dto/update-user.input';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -26,6 +25,14 @@ export class UsersService {
    */
   async getUser(_id: string): Promise<User> {
     return await this.uModel.findOne({ _id });
+  }
+
+  /**
+   * Create new User
+   **/
+  createUser(createUserDto: CreateUserDto): Promise<User> {
+    const createdItem = new this.uModel(createUserDto);
+    return createdItem.save() as any;
   }
 
   /**

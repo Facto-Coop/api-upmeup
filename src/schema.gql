@@ -18,6 +18,23 @@ input CreateOfferDto {
   userId: String!
 }
 
+"""Create new User"""
+input CreateUserDto {
+  city: String!
+  eduLevel: String!
+  email: String!
+  experience: String!
+  jobPosition: String!
+  languages: [String!]!
+  lastJobTasks: String!
+  name: String!
+  password: String!
+  sector_id: String!
+  surname: String!
+  tipo: String!
+  valors: [String!]!
+}
+
 """Create for UsersOffersModel """
 input CreateUsersOffersInput {
   offer_id: String!
@@ -32,6 +49,7 @@ scalar DateTime
 type Mutation {
   createItem(input: CreateUsersOffersInput!): UsersOffer!
   createOffer(createOfferDto: CreateOfferDto!): Offer!
+  createUser(createUserDto: CreateUserDto!): User!
   updateEnrollOffer(id: String!, input: UpdateOfferEnrollInput!): Offer!
   updateOffer(id: String!, offerInputs: UpdateOfferInput!): Offer!
   updateUser(id: String!, userInputs: UpdateUserInput!): User!

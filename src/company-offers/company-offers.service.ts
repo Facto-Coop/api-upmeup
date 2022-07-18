@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { BadRequestException, Get, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Types as MongooseTypes } from 'mongoose';
 import { Model } from 'mongoose';
 import { CreateOfferDto } from './dto/create-offer.dto';
 import { UpdateOfferInput } from './dto/inputs/update-offer.input';
