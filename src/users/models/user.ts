@@ -57,15 +57,19 @@ export class User {
   @Prop()
   languages: string[];
 
-/* Campo para conocimiento (tags?)
   @Field(() => [String])
   @Prop()
-  knowledge: string[];
-*/
+  competencies: string[];
 
   @Field(() => [String])
   @Prop()
   valors: string[];
+
+  /* Campo para añadir conocimiento
+  @Field(() => [String])
+  @Prop()
+  knowledge: string[];
+  */
 
 }
 export type UserDocument = User & Document;

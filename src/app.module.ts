@@ -9,6 +9,7 @@ import { CompanyOffersModule } from './company-offers/company-offers.module';
 import { UsersOffersModule } from './users-offers/users-offers.module';
 import { SoftskillsModule } from './softskills/softskills.module';
 import { SectorsModule } from './sectors/sectors.module';
+import { CompetenciesModule } from './competencies/competencies.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { SectorsModule } from './sectors/sectors.module';
     UsersOffersModule,
     SoftskillsModule,
     SectorsModule,
+    CompetenciesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

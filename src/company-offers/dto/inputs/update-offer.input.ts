@@ -36,6 +36,10 @@ export class UpdateOfferInput {
     @Prop({ required: true })
     jornada: string;
 
+    @Field(() => [String])
+    @Prop()
+    competencies: string[];
+
     @Field(() => String)
     @Prop()
     description: string;

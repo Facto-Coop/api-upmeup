@@ -42,6 +42,10 @@ export class CreateOfferDto {
     @Prop()
     jornada: string;
   
+    @Field(() => [String])
+    @Prop()
+    competencies: string[];
+    
     @Field(() => Number)
     @Prop()
     enrolled: number;

@@ -42,6 +42,10 @@ export class Offer {
   @Field(() => String)
   @Prop()
   jornada: string;
+  
+  @Field(() => [String])
+  @Prop()
+  competencies: string[];
 
   @Field(() => Number)
   @Prop()
@@ -58,7 +62,8 @@ export class Offer {
   @Field(() => Date)
   @Prop()
   createdDate: Date;
-  
+
+
   // TODO: Get info from owner
   /*@Field(() => User)
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: User.name })

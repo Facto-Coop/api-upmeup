@@ -57,6 +57,11 @@ export class CreateUserDto {
   @Field(() => [String])
   @Prop()
   languages: string[];
+  
+  @Field(() => [String])
+  @Prop()
+  competencies: string[];
+  
 
 /* 
   @Field(() => [String])

@@ -48,6 +48,10 @@ export class UpdateUserInput {
     @Prop()
     languages: string[];
 
+    @Field(() => [String])
+    @Prop()
+    competencies: string[];
+
  /*  
   @Field(() => [String])
   @Prop()
