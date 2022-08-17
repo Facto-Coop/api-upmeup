@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Resolver, Query, Args, Mutation, Parent, ResolveField } from '@nestjs/graphql';
+import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
 import { Offer } from './models/company-offer';
 import { CompanyOffersService } from './company-offers.service';
 import { CreateOfferDto } from './dto/create-offer.dto';
