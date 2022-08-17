@@ -14,6 +14,12 @@ export class UsersResolver {
   async getUsers(): Promise<User[]> {
     return this.uService.findAll();
   }
+  
+  // User List to Logged
+  @Query((returns) => [User])
+  async getUsersData(): Promise<User[]> {
+    return this.uService.getUsersList();
+  }
 
   // User By ID
   @Query((returns) => User)

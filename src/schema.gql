@@ -99,6 +99,7 @@ type Query {
   getSoftskills: [Softskill!]!
   getUser(id: String!): User!
   getUsers: [User!]!
+  getUsersData: [User!]!
   getUsersOffers: [UsersOffer!]!
 }
 

@@ -19,6 +19,19 @@ export class UsersService {
   }
 
   /**
+   * Get User By User Logged ID
+   * @param _id
+   * @returns
+  */
+  async getUsersList(): Promise<User[]> {
+    try {
+      return this.uModel.find();
+    } catch (error) {
+      throw new BadRequestException();
+    }
+  }
+
+  /**
    * Get User By UserID
    * @param _id
    * @returns
