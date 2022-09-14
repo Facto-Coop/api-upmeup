@@ -39,7 +39,7 @@ export class UsersResolver {
    * Mutation: Update User
    */
   @Mutation(() => User, { name: 'updateUser' })
-  async updateOffer(
+  async updateUser(
     @Args('id') _id: string,
     @Args({ name: 'userInputs', type: () => UpdateUserInput }) input: UpdateUserInput
   ) {

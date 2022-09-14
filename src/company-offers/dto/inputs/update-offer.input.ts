@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Field, ID, InputType, Int } from '@nestjs/graphql';
+import { Field, InputType } from '@nestjs/graphql';
 import { Prop, Schema } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
 

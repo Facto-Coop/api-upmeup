@@ -1,9 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose from 'mongoose';
 import { Document, Types as MongooseTypes } from 'mongoose';
-import { User } from 'src/users/models/user';
 
 @Schema()
 @ObjectType({ description: 'from CompanyOfferModel ' })
