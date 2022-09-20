@@ -8,11 +8,11 @@ import { UsersService } from './users.service';
 
 @Resolver(() => User)
 export class UsersResolver {
-  constructor(private uService: UsersService) {}
+  constructor(private readonly uService: UsersService) {}
 
   @Query((returns) => [User])
   async getUsers(): Promise<User[]> {
-    return this.uService.findAll();
+    return await this.uService.findAll();
   }
   
   // User List to Logged
@@ -24,7 +24,7 @@ export class UsersResolver {
   // User By ID
   @Query((returns) => User)
   async getUser(@Args('id') id: string) {
-    return this.uService.getUserById(id);
+    return await this.uService.getUserById(id);
   }
 
   /**
